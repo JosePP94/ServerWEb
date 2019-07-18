@@ -69,7 +69,9 @@
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log("onMessageArrived:"+message.payloadString);
+   console.log("onMessageArrived:"+message.payloadString);
+   sensor=document.getElementById('sensor_val');
+   sensor.innerHTML=message.payloadString
 	doAction(message.payloadString);
   }
   
@@ -101,7 +103,7 @@
 		switch(f) {
 		  case 'led_state':
 			led_state=v;
-			document.getElementById("led_state").innerHTML=led_state;
+			sensdocument.getElementById("led_state").innerHTML=led_state;
 			break;
 		  case 'sensor_val':
 			sensor_val=v;
